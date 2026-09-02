@@ -57,6 +57,71 @@ export interface BusinessListing {
 }
 
 export const BUSINESS_DATA: Record<string, BusinessListing> = {
+  "quran-academy": {
+    id: "quran-academy",
+    title: "Online Quran Academy",
+    tagline: "Learn Quran Online with Tajweed & Certified Islamic Tutors",
+    category: "Education",
+    subCategory: "Quran Academy & Online Classes",
+    city: "Online",
+    district: "Global",
+    address: "Online Classes via Zoom / Skype",
+    priceRange: "Contact for Fee",
+    serviceType: "Online Quran Teaching",
+    whatsapp: "923063621318",
+    phone: "+92 306 3621318",
+    hours: "24/7 Flexible Timings",
+    reviews: "4.9 ★ (120+ Students)",
+    facebook: "Online Quran Academy",
+    verified: true,
+    logo: "/images/education/Quranonline.png",
+    bannerImage: "/images/education/Quranonline.png",
+    description: "Online Quran Academy offers flexible, high-quality one-on-one Quran learning for kids and adults. We provide certified male & female tutors for Nazra, Hifz, Tajweed, and foundational Islamic studies globally.",
+    featured: true,
+    products: [
+      {
+        id: "qa-1",
+        name: "Nazra Quran with Tajweed",
+        description: "Master Quranic recitation with precise Tajweed pronunciation rules under expert guidance.",
+        image: "/images/education/Quran1.jpeg",
+        price: "Contact for Fee",
+        badge: "Popular",
+        category: "Quran Courses",
+        details: {
+          overview: "1-on-1 live interactive sessions tailored for kids and beginners.",
+          duration: "30-45 mins per session",
+          mode: "Online (Zoom / Skype)"
+        }
+      },
+      {
+        id: "qa-2",
+        name: "Quran Memorization (Hifz)",
+        description: "Structured step-by-step Quran memorization program with systematic daily revision.",
+        image: "/images/education/hifz.jpg",
+        price: "Contact for Fee",
+        badge: "Featured",
+        category: "Quran Courses",
+        details: {
+          overview: "Comprehensive Hifz plan with memory techniques and tracking.",
+          duration: "1 Hour per session",
+          mode: "Online (Zoom / Skype)"
+        }
+      },
+      {
+        id: "qa-3",
+        name: "Islamic Studies & Daily Duas",
+        description: "Learn essential Islamic knowledge, daily masnoon duas, prayer rules, and moral ethics.",
+        image: "/images/education/dua.jpg",
+        price: "Contact for Fee",
+        category: "Islamic Studies",
+        details: {
+          overview: "Basic Islamic tarbiyah for young students and converts.",
+          duration: "30 mins per session",
+          mode: "Online (Zoom / Skype)"
+        }
+      }
+    ]
+  },
   "soofi-saifullah-fragrances": {
     id: "soofi-saifullah-fragrances",
     title: "Soofi Saifullah Perfumes",

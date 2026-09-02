@@ -8,6 +8,19 @@ import SearchableCitySelect from "@/components/shared/SearchableCitySelect";
 
 export const ALL_LISTINGS = [
   {
+    id: "quran-academy",
+    title: "Online Quran Academy",
+    category: "Education & Tutors",
+    subCategory: "Quran Academy & Online Classes",
+    city: "Online / Islamabad",
+    address: "Online Classes via Zoom / Skype (Pakistan & Global)",
+    price: "Contact for Fee",
+    whatsapp: "923063621318",
+    logo: "/images/education/Quranonline.png",
+    description: "Learn Quran online with Tajweed, Hifz, Nazra & Islamic Studies with certified male & female tutors. Flexible 1-on-1 timings for kids & adults.",
+    featured: true
+  },
+  {
     id: "mhec-center",
     title: "Mental Health and Education Centre",
     category: "Healthcare",
@@ -83,7 +96,8 @@ export default function ListingsPage() {
     const matchesCity =
       !selectedCity ||
       item.city.toLowerCase().includes(selectedCity.toLowerCase()) ||
-      item.address.toLowerCase().includes(selectedCity.toLowerCase());
+      item.address.toLowerCase().includes(selectedCity.toLowerCase()) ||
+      item.city.toLowerCase().includes("online");
     const matchesSearch =
       !searchQuery ||
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -109,7 +123,7 @@ export default function ListingsPage() {
               Explore <span className="text-[#058A39]">Verified Listings</span>
             </h1>
             <p className="text-slate-300 text-xs sm:text-sm max-w-xl">
-              Search verified local businesses, guest houses, healthcare centers, and outlets across all cities in Pakistan.
+              Search verified local businesses, guest houses, healthcare centers, and online academies across Pakistan.
             </p>
           </div>
 
@@ -139,7 +153,7 @@ export default function ListingsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           
-          {/* Left Sidebar Filters - Professional SaaS Card */}
+          {/* Left Sidebar Filters */}
           <aside className="bg-white p-6 rounded-3xl border border-slate-200/90 h-fit space-y-6 shadow-md shadow-slate-100">
             
             {/* Header */}
@@ -164,7 +178,7 @@ export default function ListingsPage() {
               )}
             </div>
 
-            {/* City Dropdown Filter (Searchable A-Z) */}
+            {/* City Dropdown Filter */}
             <div className="space-y-2">
               <label className="flex items-center justify-between text-xs font-bold text-slate-800 uppercase tracking-wider">
                 <span>Select City / Region</span>
@@ -271,7 +285,7 @@ export default function ListingsPage() {
                 </div>
                 <div className="space-y-1">
                   <p className="text-base font-bold text-slate-800">No listings match your search criteria.</p>
-                  <p className="text-xs text-slate-500">Try clearing your filters or selecting a different city.</p>
+                  <p className="text-xs text-slate-500">Try clearing your filters or selecting a different category.</p>
                 </div>
                 <button
                   onClick={handleResetFilters}
@@ -299,13 +313,14 @@ export default function ListingsPage() {
 
                       <div className="flex items-start gap-4 mb-3">
                         {listing.logo && (
-                          <div className="relative w-14 h-14 rounded-2xl bg-slate-900 border border-slate-200 p-1 shrink-0 overflow-hidden shadow-sm">
+                          <div className="relative w-14 h-14 rounded-2xl bg-slate-900 border border-slate-200 p-1 shrink-0 overflow-hidden shadow-sm flex items-center justify-center">
                             <Image
                               src={listing.logo}
                               alt={listing.title}
                               fill
                               sizes="56px"
                               className="object-contain p-1"
+                              unoptimized
                             />
                           </div>
                         )}
@@ -338,7 +353,7 @@ export default function ListingsPage() {
                       
                       <a
                         href={`https://wa.me/${listing.whatsapp}?text=${encodeURIComponent(
-                          `AoA! Mujhe ${listing.title} ke hawale se maloomat chahiye.`
+                          `AoA! Mujhe ${listing.title} ke courses aur details ke hawale se inquiry karni hai.`
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"

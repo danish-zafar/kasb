@@ -20,7 +20,20 @@ import {
 } from "lucide-react";
 import BusinessCard from "@/components/shared/BusinessCard";
 import SearchableCitySelect from "@/components/shared/SearchableCitySelect";
-import { ALL_LISTINGS } from "./listings/page";
+import { BUSINESS_DATA } from "@/data/businessData";
+
+// Converted Object values to Array for homepage mapping
+export const ALL_LISTINGS = Object.values(BUSINESS_DATA).map((b) => ({
+  id: b.id,
+  title: b.title,
+  category: b.category,
+  address: b.address,
+  price: b.priceRange,
+  description: b.description,
+  whatsapp: b.whatsapp,
+  logo: b.logo,
+  featured: b.featured
+}));
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -72,7 +85,7 @@ export default function Home() {
               <Search className="w-5 h-5 text-[#058A39] shrink-0" />
               <input
                 type="text"
-                placeholder="What are you looking for? (e.g. Mental Health, Perfumes)"
+                placeholder="What are you looking for? (e.g. Quran Academy, Perfumes)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-transparent text-slate-900 font-semibold placeholder-slate-500 text-sm sm:text-base outline-none"
@@ -127,11 +140,11 @@ export default function Home() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
+            { title: "Education", count: "Online Quran Academy & Tutors", icon: GraduationCap },
             { title: "Hotel/Hospitality", count: "Ideal Guest House & Stays", icon: Hotel },
             { title: "Healthcare", count: "Mental Health & Consultations", icon: HeartPulse },
             { title: "Businesses", count: "Perfumes & Retail Outlets", icon: Building2 },
             { title: "Property", count: "Real Estate Listings", icon: HomeIcon },
-            { title: "Education", count: "Tutors & Academy", icon: GraduationCap },
             { title: "Deals & Offers", count: "Promotional Deals", icon: Tag },
           ].map((cat, i) => (
             <Link key={i} href="/listings" className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-[#058A39] transition text-center group">
@@ -151,14 +164,14 @@ export default function Home() {
           <div>
             <span className="text-xs font-bold text-[#058A39] bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 uppercase tracking-wide">Featured</span>
             <h2 className="text-2xl font-bold text-slate-900 mt-1">Top Promoted Listings</h2>
-            <p className="text-sm text-slate-500">Verified local providers and verified businesses.</p>
+            <p className="text-sm text-slate-500">Verified local providers, institutes, and businesses.</p>
           </div>
           <Link href="/listings" className="text-sm font-semibold text-[#058A39] hover:underline flex items-center gap-1">
             See All Listings <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* Dynamic Business Cards Grid */}
+        {/* Dynamic Business Cards Grid including Quran Academy */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredListings.map((item) => (
             <BusinessCard
@@ -221,11 +234,11 @@ export default function Home() {
 
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
           {[
+            { city: "Online", province: "Global / Worldwide", listings: "Online Quran Academy" },
             { city: "Mithi", province: "Tharparkar, Sindh", listings: "Ideal Guest House & Stays" },
             { city: "Islamabad", province: "ICT", listings: "Mental Health & Services" },
             { city: "Daharki", province: "Ghotki, Sindh", listings: "Soofi Saifullah Fragrances" },
             { city: "Karachi", province: "Sindh", listings: "Commercial & Business" },
-            { city: "Sanghar", province: "Sindh", listings: "Trade & Agricultural Outlets" },
           ].map((item, idx) => (
             <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-200 text-left hover:border-[#058A39] transition">
               <MapPin className="w-5 h-5 text-[#058A39] mb-2" />

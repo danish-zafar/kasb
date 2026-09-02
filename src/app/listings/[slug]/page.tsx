@@ -53,7 +53,6 @@ export default function BusinessDetailPage({ params }: PageProps) {
 
   const [categoryFilter, setCategoryFilter] = useState<string>("All");
   const [selectedDetails, setSelectedDetails] = useState<{ overview: string; duration: string; mode: string } | null>(null);
-  const [selectedNotes, setSelectedNotes] = useState<{ top: string; heart: string; base: string; name: string } | null>(null);
   const [previewImage, setPreviewImage] = useState<GalleryImage | null>(null);
 
   if (!listing) {
@@ -74,13 +73,16 @@ export default function BusinessDetailPage({ params }: PageProps) {
 
   const isOrderProduct = listing.id === "soofi-saifullah-fragrances" || listing.category.toLowerCase().includes("perfume");
   const isGuestHouse = listing.id === "ideal-guest-house" || listing.category.toLowerCase().includes("hotel");
+  const isAcademy = listing.id === "quran-academy" || listing.category.toLowerCase().includes("quran");
 
   const mainWhatsappUrl = `https://wa.me/${listing.whatsapp}?text=${encodeURIComponent(
-    isOrderProduct 
-      ? `AoA! Mujhe ${listing.title} ke hawale se perfumes order karne hain.`
-      : isGuestHouse
-        ? `AoA! Mujhe ${listing.title} ke hawale se room booking / rates maloom karne hain.`
-        : `AoA! Mujhe ${listing.title} ke hawale se inquiry / appointment book karni hai.`
+    isAcademy
+      ? `AoA! Mujhe ${listing.title} ke courses aur online admission ke hawale se inquiry karni hai.`
+      : isOrderProduct 
+        ? `AoA! Mujhe ${listing.title} ke hawale se perfumes order karne hain.`
+        : isGuestHouse
+          ? `AoA! Mujhe ${listing.title} ke hawale se room booking / rates maloom karne hain.`
+          : `AoA! Mujhe ${listing.title} ke hawale se inquiry / appointment book karni hai.`
   )}`;
 
   return (
@@ -113,12 +115,13 @@ export default function BusinessDetailPage({ params }: PageProps) {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
             
             <div className="flex items-center gap-5">
-              <div className="relative w-24 h-24 rounded-2xl bg-black border border-slate-800 p-2 shrink-0 overflow-hidden shadow-inner">
+              <div className="relative w-24 h-24 rounded-2xl bg-black border border-slate-800 p-2 shrink-0 overflow-hidden shadow-inner flex items-center justify-center">
                 <Image
                   src={listing.logo}
                   alt={listing.title}
                   fill
                   className="object-contain p-1"
+                  unoptimized
                 />
               </div>
 
@@ -157,7 +160,7 @@ export default function BusinessDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Details & Contact Info Grid (Screenshot layout design) */}
+        {/* Details & Contact Info Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           
           {/* Main About Description Box */}
@@ -191,10 +194,9 @@ export default function BusinessDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* Screenshot Contact Info & Details Sidebar Box */}
+          {/* Contact Info & Details Sidebar */}
           <div className="bg-slate-900/90 rounded-3xl border border-slate-800/80 p-6 space-y-6 shadow-lg">
             
-            {/* Details Section */}
             <div className="space-y-3">
               <h3 className="text-base font-bold text-white tracking-wide border-b border-slate-800 pb-2">
                 Details
@@ -203,12 +205,12 @@ export default function BusinessDetailPage({ params }: PageProps) {
               <div className="space-y-3 text-xs">
                 <div className="flex items-center gap-3 text-slate-300">
                   <Star className="w-4 h-4 text-slate-400 shrink-0" />
-                  <span>{listing.reviews || "Not yet rated (0 reviews)"}</span>
+                  <span>{listing.reviews || "Not yet rated"}</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-slate-300">
                   <Clock className="w-4 h-4 text-slate-400 shrink-0" />
-                  <span>{listing.hours || "Always open"}</span>
+                  <span>{listing.hours || "24/7 Available"}</span>
                 </div>
 
                 <div className="flex items-start gap-3 text-slate-300">
@@ -220,7 +222,6 @@ export default function BusinessDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Contact Info Section */}
             <div className="space-y-3 pt-2 border-t border-slate-800">
               <h3 className="text-base font-bold text-white tracking-wide border-b border-slate-800 pb-2">
                 Contact info
@@ -259,39 +260,33 @@ export default function BusinessDetailPage({ params }: PageProps) {
 
         </div>
 
-        {/* Ideal Guest House Image Gallery Showcase (Replaces products for guest house) */}
+        {/* Gallery Showcase */}
         {gallery.length > 0 && (
           <div className="space-y-6 pt-4">
-            
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
               <div>
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
                   <ImageIcon className="w-5 h-5 text-amber-400" />
-                  Guest House Photos & Rooms
+                  Photo Gallery
                   <span className="text-xs bg-amber-500/10 text-amber-400 px-2.5 py-0.5 rounded-full border border-amber-500/20 font-medium">
                     {gallery.length} Images
                   </span>
                 </h2>
-                <p className="text-xs text-slate-400 mt-0.5">
-                  Explore rooms, facilities, and premises of Ideal Guest House Mithi. Click any photo to expand.
-                </p>
               </div>
             </div>
 
-            {/* Gallery Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {gallery.map((item: GalleryImage) => {
                 const itemWhatsappUrl = `https://wa.me/${listing.whatsapp}?text=${encodeURIComponent(
-                  `AoA! Mujhe Ideal Guest House Mithi ke "${item.title}" (${item.category || "Rooms"}) ke room rates maloom karne hain.`
+                  `AoA! Mujhe "${item.title}" ke hawale se inquiry karni hai.`
                 )}`;
 
                 return (
                   <div
                     key={item.id}
-                    className="group bg-slate-900/70 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-black/50 relative overflow-hidden"
+                    className="group bg-slate-900/70 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 relative overflow-hidden"
                   >
                     <div>
-                      {/* Image Frame */}
                       <div 
                         onClick={() => setPreviewImage(item)}
                         className="relative w-full h-52 rounded-xl bg-slate-950 overflow-hidden mb-3 border border-slate-800/60 cursor-pointer group"
@@ -301,30 +296,22 @@ export default function BusinessDetailPage({ params }: PageProps) {
                           alt={item.title}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          unoptimized
                         />
-                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                           <span className="bg-slate-900/90 text-amber-400 text-xs font-bold px-3 py-1.5 rounded-xl border border-amber-500/40 flex items-center gap-1.5">
                             <Maximize2 className="w-3.5 h-3.5" /> View Photo
                           </span>
                         </div>
                       </div>
 
-                      {/* Info */}
-                      <div className="space-y-1">
-                        <div className="flex items-center justify-between">
-                          <h3 className="font-bold text-white text-sm group-hover:text-amber-400 transition-colors">
-                            {item.title}
-                          </h3>
-                          {item.category && (
-                            <span className="text-[10px] font-semibold bg-slate-800 text-slate-300 px-2 py-0.5 rounded">
-                              {item.category}
-                            </span>
-                          )}
-                        </div>
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold text-white text-sm group-hover:text-amber-400 transition-colors">
+                          {item.title}
+                        </h3>
                       </div>
                     </div>
 
-                    {/* Action Button */}
                     <div className="pt-4 mt-3 border-t border-slate-800/80">
                       <a
                         href={itemWhatsappUrl}
@@ -333,38 +320,35 @@ export default function BusinessDetailPage({ params }: PageProps) {
                         className="w-full text-xs font-extrabold bg-[#058A39] hover:bg-emerald-600 text-white py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow"
                       >
                         <Phone className="w-3.5 h-3.5" />
-                        <span>Inquire Room on WhatsApp</span>
+                        <span>Inquire on WhatsApp</span>
                       </a>
                     </div>
-
                   </div>
                 );
               })}
             </div>
-
           </div>
         )}
 
-        {/* Standard Products / Services Collection Grid (For other listings) */}
+        {/* Course / Product Collection Grid */}
         {products.length > 0 && gallery.length === 0 && (
           <div className="space-y-6 pt-4">
             
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
               <div>
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  {isOrderProduct ? "Featured Perfume Collection" : "Featured Services"}
+                  {isAcademy ? "Available Courses & Classes" : isOrderProduct ? "Featured Collection" : "Featured Services"}
                   <span className="text-xs bg-amber-500/10 text-amber-400 px-2.5 py-0.5 rounded-full border border-amber-500/20 font-medium">
                     {products.length} Items
                   </span>
                 </h2>
                 <p className="text-xs text-slate-400 mt-0.5">
-                  {isOrderProduct
-                    ? "Explore our luxury handcrafted perfumes. Order directly on WhatsApp for fast delivery."
-                    : "Select any service below to view details or book an appointment via WhatsApp."}
+                  {isAcademy
+                    ? "Select any Quranic or Islamic course below to enroll or book a free trial class."
+                    : "Select any option below to view details or make an inquiry via WhatsApp."}
                 </p>
               </div>
 
-              {/* Dynamic Category Filter Tabs */}
               {availableCategories.length > 1 && (
                 <div className="flex flex-wrap items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800">
                   {availableCategories.map((tab) => (
@@ -384,21 +368,19 @@ export default function BusinessDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* Products / Services Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {filteredProducts.map((product: ServiceProduct) => {
                 const itemWhatsappUrl = `https://wa.me/${listing.whatsapp}?text=${encodeURIComponent(
-                  isOrderProduct 
-                    ? `AoA! Mujhe "${product.name}" (${product.size || "50ml"}) order karna hai.`
-                    : `AoA! Mujhe "${product.name}" ke liye appointment book karni hai.`
+                  isAcademy 
+                    ? `AoA! Mujhe "${product.name}" course ke online admission aur free trial class ke bare me janna hai.`
+                    : `AoA! Mujhe "${product.name}" ke hawale se inquiry karni hai.`
                 )}`;
 
                 return (
                   <div
                     key={product.id}
-                    className="group bg-slate-900/70 border border-slate-800 hover:border-slate-700 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-black/50 relative overflow-hidden"
+                    className="group bg-slate-900/70 border border-slate-800 hover:border-slate-700 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 relative overflow-hidden"
                   >
-                    {/* Badge */}
                     {product.badge && (
                       <span className="absolute top-3 left-3 z-10 text-[10px] font-bold bg-amber-500 text-slate-950 px-2 py-0.5 rounded-md uppercase tracking-wider shadow">
                         {product.badge}
@@ -406,55 +388,37 @@ export default function BusinessDetailPage({ params }: PageProps) {
                     )}
 
                     <div>
-                      {/* Service / Product Image */}
                       <div className="relative w-full h-48 rounded-xl bg-slate-950 overflow-hidden mb-3 border border-slate-800/60">
                         <Image
                           src={product.image}
                           alt={product.name}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          unoptimized
                         />
                       </div>
 
-                      {/* Details & Info */}
                       <div className="space-y-1.5">
                         <div className="flex items-center justify-between">
                           <h3 className="font-bold text-white text-base group-hover:text-amber-400 transition-colors">
                             {product.name}
                           </h3>
                           
-                          {/* Info Button for Details or Notes */}
                           {product.details && (
                             <button
                               onClick={() => setSelectedDetails(product.details || null)}
-                              title="View Service Details"
-                              className="text-slate-500 hover:text-amber-400 transition p-1 cursor-pointer"
+                              title="View Course Details"
+                              className="text-slate-400 hover:text-amber-400 transition p-1 cursor-pointer"
                             >
                               <Info className="w-4 h-4" />
                             </button>
                           )}
-
-                          {product.notes && (
-                            <button
-                              onClick={() => setSelectedNotes({ ...product.notes!, name: product.name })}
-                              title="View Fragrance Notes"
-                              className="text-amber-400/80 hover:text-amber-300 text-xs font-semibold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 flex items-center gap-1 transition cursor-pointer"
-                            >
-                              <Info className="w-3.5 h-3.5" /> Notes
-                            </button>
-                          )}
                         </div>
 
-                        {/* Price & Specs */}
                         <div className="flex items-center gap-2 text-xs font-medium">
                           {product.price && (
                             <span className="text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                              PKR {typeof product.price === 'number' ? product.price.toLocaleString() : product.price}
-                            </span>
-                          )}
-                          {(product.size || product.gender) && (
-                            <span className="text-slate-400 text-[11px]">
-                              {[product.size, product.gender].filter(Boolean).join(" • ")}
+                              {typeof product.price === 'number' ? `PKR ${product.price.toLocaleString()}` : product.price}
                             </span>
                           )}
                         </div>
@@ -465,7 +429,6 @@ export default function BusinessDetailPage({ params }: PageProps) {
                       </div>
                     </div>
 
-                    {/* Action Button */}
                     <div className="pt-4 mt-3 border-t border-slate-800/80">
                       <a
                         href={itemWhatsappUrl}
@@ -474,7 +437,7 @@ export default function BusinessDetailPage({ params }: PageProps) {
                         className="w-full text-xs font-extrabold bg-[#058A39] hover:bg-emerald-600 text-white py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow"
                       >
                         <Phone className="w-3.5 h-3.5" />
-                        <span>{isOrderProduct ? "Order Now on WhatsApp" : "Book Appointment"}</span>
+                        <span>{isAcademy ? "Enroll / Free Trial" : "Book / Inquiry"}</span>
                       </a>
                     </div>
 
@@ -490,58 +453,17 @@ export default function BusinessDetailPage({ params }: PageProps) {
         <div className="bg-slate-900/40 rounded-2xl border border-slate-800/60 p-4 flex items-center gap-3 text-xs text-slate-400">
           <ShieldCheck className="w-5 h-5 text-amber-500 shrink-0" />
           <div>
-            <strong className="text-slate-200">Direct Listing Guarantee — KasbMarkaz:</strong> Connect directly with {listing.title} for verified pricing, room availability, and appointments.
+            <strong className="text-slate-200">Direct Listing Guarantee — KasbMarkaz:</strong> Connect directly with {listing.title} for reliable services, flexible timings, and authentic assistance.
           </div>
         </div>
 
       </div>
 
-      {/* Image Lightbox Modal */}
-      {previewImage && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="relative max-w-4xl w-full bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
-            <div className="p-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
-              <h3 className="text-sm font-bold text-white">{previewImage.title}</h3>
-              <button
-                onClick={() => setPreviewImage(null)}
-                className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition cursor-pointer"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            
-            <div className="relative w-full h-[60vh] sm:h-[70vh] bg-black">
-              <Image
-                src={previewImage.image}
-                alt={previewImage.title}
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <div className="p-4 bg-slate-950 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <span className="text-xs text-slate-400">{previewImage.category || "Ideal Guest House Mithi"}</span>
-              <a
-                href={`https://wa.me/${listing.whatsapp}?text=${encodeURIComponent(
-                  `AoA! Mujhe Ideal Guest House Mithi ke "${previewImage.title}" ke rates & booking maloom karni hain.`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#058A39] hover:bg-emerald-600 text-white font-bold text-xs py-2.5 px-5 rounded-xl transition flex items-center gap-2 shadow"
-              >
-                <Phone className="w-4 h-4" />
-                <span>Inquire Room on WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Service Details Modal */}
+      {/* Service / Course Details Modal */}
       {selectedDetails && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 max-w-sm w-full space-y-4 relative">
-            <h4 className="text-sm font-bold text-amber-400 uppercase tracking-wider">Service Information</h4>
+            <h4 className="text-sm font-bold text-amber-400 uppercase tracking-wider">Course / Service Details</h4>
             <div className="space-y-2 text-xs">
               <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
                 <span className="text-slate-500 font-semibold block">Overview</span>
@@ -566,31 +488,28 @@ export default function BusinessDetailPage({ params }: PageProps) {
         </div>
       )}
 
-      {/* Fragrance Notes Modal */}
-      {selectedNotes && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 max-w-sm w-full space-y-4 relative">
-            <h4 className="text-sm font-bold text-amber-400 uppercase tracking-wider">{selectedNotes.name} — Fragrance Pyramid</h4>
-            <div className="space-y-2 text-xs">
-              <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                <span className="text-amber-400/90 font-bold block mb-0.5">Top Notes</span>
-                <span className="text-slate-200">{selectedNotes.top}</span>
-              </div>
-              <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                <span className="text-amber-400/90 font-bold block mb-0.5">Heart Notes</span>
-                <span className="text-slate-200">{selectedNotes.heart}</span>
-              </div>
-              <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                <span className="text-amber-400/90 font-bold block mb-0.5">Base Notes</span>
-                <span className="text-slate-200">{selectedNotes.base}</span>
-              </div>
-            </div>
+      {/* Image Lightbox Preview Modal */}
+      {previewImage && (
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="relative max-w-3xl w-full bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2">
             <button
-              onClick={() => setSelectedNotes(null)}
-              className="w-full bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold py-2.5 rounded-xl transition cursor-pointer"
+              onClick={() => setPreviewImage(null)}
+              className="absolute top-4 right-4 z-10 bg-slate-950/80 hover:bg-slate-800 text-white p-2 rounded-full border border-slate-700 transition"
             >
-              Close
+              <X className="w-5 h-5" />
             </button>
+            <div className="relative w-full h-[70vh] rounded-xl overflow-hidden">
+              <Image
+                src={previewImage.image}
+                alt={previewImage.title}
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+            <div className="p-4 text-center">
+              <h3 className="text-base font-bold text-white">{previewImage.title}</h3>
+            </div>
           </div>
         </div>
       )}
