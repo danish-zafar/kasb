@@ -16,7 +16,8 @@ import {
   ShieldCheck,
   Zap,
   Users,
-  HeartPulse
+  HeartPulse,
+  Stethoscope
 } from "lucide-react";
 import BusinessCard from "@/components/shared/BusinessCard";
 import SearchableCitySelect from "@/components/shared/SearchableCitySelect";
@@ -138,8 +139,9 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
           {[
+            { title: "Veterinary", count: "Doctor & Pet Care Services", icon: Stethoscope },
             { title: "Education", count: "Online Quran Academy & Tutors", icon: GraduationCap },
             { title: "Hotel/Hospitality", count: "Ideal Guest House & Stays", icon: Hotel },
             { title: "Healthcare", count: "Mental Health & Consultations", icon: HeartPulse },

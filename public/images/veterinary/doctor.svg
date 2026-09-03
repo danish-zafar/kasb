@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#011429"/>
+      <stop offset="100%" stop-color="#042d5c"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#dGrad)"/>
+  <rect x="20" y="20" width="560" height="360" rx="20" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.3"/>
+  <text x="300" y="160" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-weight="900" font-size="48">🩺</text>
+  <text x="300" y="240" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="800" font-size="24">Veterinary Doctor Consultation</text>
+  <text x="300" y="280" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-weight="600" font-size="15">S.A.U Tandojam • R.V.M.P Islamabad</text>
+  <text x="300" y="315" text-anchor="middle" fill="#34d399" font-family="system-ui, sans-serif" font-weight="600" font-size="14">Appointments Available via WhatsApp</text>
+</svg>

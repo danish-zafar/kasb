@@ -35,5 +35,17 @@ export const LISTINGS: ListingItem[] = [
     logo: "/images/education/WhatsApp Image 2026-08-30 at 10.49.58 AM.jpeg",
     featured: true,
     city: "Online / Global"
+  },
+  {
+    id: "dr-azad-sindhi-vet-care",
+    title: "Dr Azad Sindhi Vet Care Services",
+    category: "Veterinary",
+    address: "Al-Fatah Model Town Daharki",
+    price: "2k to 5k PKR",
+    description: "Professional Veterinary Doctor (S.A.U Tandojam, R.V.M.P Islamabad). Pet animals vaccination specialist & hygiene pet food.",
+    whatsapp: "923133100011",
+    logo: "/images/veterinary/logo.svg",
+    featured: true,
+    city: "Daharki"
   }
 ];

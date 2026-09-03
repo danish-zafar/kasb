@@ -74,6 +74,7 @@ export default function BusinessDetailPage({ params }: PageProps) {
   const isOrderProduct = listing.id === "soofi-saifullah-fragrances" || listing.category.toLowerCase().includes("perfume");
   const isGuestHouse = listing.id === "ideal-guest-house" || listing.category.toLowerCase().includes("hotel");
   const isAcademy = listing.id === "quran-academy" || listing.category.toLowerCase().includes("quran");
+  const isVet = listing.id === "dr-azad-sindhi-vet-care" || listing.category.toLowerCase().includes("veterinary");
 
   const mainWhatsappUrl = `https://wa.me/${listing.whatsapp}?text=${encodeURIComponent(
     isAcademy
@@ -82,7 +83,9 @@ export default function BusinessDetailPage({ params }: PageProps) {
         ? `AoA! Mujhe ${listing.title} ke hawale se perfumes order karne hain.`
         : isGuestHouse
           ? `AoA! Mujhe ${listing.title} ke hawale se room booking / rates maloom karne hain.`
-          : `AoA! Mujhe ${listing.title} ke hawale se inquiry / appointment book karni hai.`
+          : isVet
+            ? `AoA! Mujhe ${listing.title} ke hawale se pet treatment / appointment book karni hai.`
+            : `AoA! Mujhe ${listing.title} ke hawale se inquiry / appointment book karni hai.`
   )}`;
 
   return (

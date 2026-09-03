@@ -58,10 +58,24 @@ export const ALL_LISTINGS = [
     logo: "/images/guesthouse/logo.png",
     description: "Comfortable executive rooms, 24/7 lodging availability, clean air-conditioned rooms, family-friendly atmosphere, and warm hospitality near Kishmir Chock Mithi, Tharparkar.",
     featured: true
+  },
+  {
+    id: "dr-azad-sindhi-vet-care",
+    title: "Dr Azad Sindhi Vet Care Services",
+    category: "Veterinary",
+    subCategory: "Pet Care & Veterinary Doctor",
+    city: "Daharki",
+    address: "Al-Fatah Model Town Daharki",
+    price: "2k to 5k PKR",
+    whatsapp: "923133100011",
+    logo: "/images/veterinary/logo.svg",
+    description: "Professional Veterinary Doctor (S.A.U Tandojam, R.V.M.P Islamabad). Pet animals vaccination specialist (Anti-Rabies, Worms, Ticks, Mites) & hygiene pet food.",
+    featured: true
   }
 ];
 
 const CATEGORIES = [
+  "Veterinary",
   "Hotel/Hospitality",
   "Healthcare",
   "Businesses",
@@ -353,7 +367,9 @@ export default function ListingsPage() {
                       
                       <a
                         href={`https://wa.me/${listing.whatsapp}?text=${encodeURIComponent(
-                          `AoA! Mujhe ${listing.title} ke courses aur details ke hawale se inquiry karni hai.`
+                          listing.category === "Veterinary"
+                            ? `AoA! Mujhe ${listing.title} ke hawale se pet treatment / appointment book karni hai.`
+                            : `AoA! Mujhe ${listing.title} ke details aur services ke hawale se inquiry karni hai.`
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"

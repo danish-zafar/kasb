@@ -394,5 +394,71 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
         category: "Exterior"
       }
     ]
+  },
+  "dr-azad-sindhi-vet-care": {
+    id: "dr-azad-sindhi-vet-care",
+    title: "Dr Azad Sindhi Vet Care Services",
+    tagline: "Professional Veterinary Doctor & Pet Care Specialist",
+    category: "Veterinary",
+    subCategory: "Pet Care & Veterinary Doctor",
+    city: "Daharki",
+    district: "Ghotki",
+    address: "Al-Fatah Model Town Daharki",
+    priceRange: "2k to 5k PKR",
+    serviceType: "Veterinary Care & Vaccination",
+    whatsapp: "923133100011",
+    phone: "0313 3100011",
+    hours: "Flexible Appointments via WhatsApp",
+    reviews: "4.9 ★ (Pet Care Specialist)",
+    facebook: "Dr Azad Sindhi Vet Care Services",
+    verified: true,
+    logo: "/images/veterinary/logo.svg",
+    bannerImage: "/images/veterinary/logo.svg",
+    description: "Professional Veterinary Doctor (S.A.U Tandojam, R.V.M.P Islamabad). Only Pet Animals Vaccination Specialist... Vaccines available on low prices from market rates just like Anti-Rabbies, Hair Fall, internal Worms, ticks, Mites, Seasonal Diseases. Provide Processed Hygiene Food For pet animals (Cats, Dogs).",
+    featured: true,
+    products: [
+      {
+        id: "vet-vaccination",
+        name: "Pet Animal Vaccination & Health Care",
+        category: "Vaccination",
+        description: "Specialist vaccines & treatments for Anti-Rabies, Hair Fall, internal Worms, Ticks, Mites & Seasonal Diseases at low market rates.",
+        image: "/images/veterinary/vaccine.svg",
+        badge: "Specialist",
+        price: "2k to 5k PKR",
+        details: {
+          overview: "Comprehensive vaccination & health treatment for pet animals.",
+          duration: "Appointment Based",
+          mode: "Clinic / On-Demand Service"
+        }
+      },
+      {
+        id: "pet-food",
+        name: "Processed Hygiene Food for Pets (Cats & Dogs)",
+        category: "Pet Food",
+        description: "Nutritious & processed hygiene food formulated for cats and dogs to maintain health and vitality.",
+        image: "/images/veterinary/petfood.svg",
+        badge: "Hygiene Food",
+        price: "Contact for Rates",
+        details: {
+          overview: "Specially processed hygiene food for cats and dogs.",
+          duration: "Available on Order",
+          mode: "Direct Delivery / Pickup"
+        }
+      },
+      {
+        id: "doctor-consultation",
+        name: "Veterinary Doctor Consultation & Appointment",
+        category: "Consultation",
+        description: "Professional veterinary doctor consultation (S.A.U Tandojam, R.V.M.P Islamabad). Book appointment easily on WhatsApp.",
+        image: "/images/veterinary/doctor.svg",
+        badge: "Appointment",
+        price: "2k to 5k PKR",
+        details: {
+          overview: "1-on-1 veterinary doctor health consultation and diagnosis.",
+          duration: "Appointment Based",
+          mode: "WhatsApp Appointment / Clinic Visit"
+        }
+      }
+    ]
   }
 };
