@@ -411,7 +411,7 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
     hours: "Flexible Appointments via WhatsApp",
     reviews: "4.9 ★ (Pet Care Specialist)",
     facebook: "Dr Azad Sindhi Vet Care Services",
-    verified: true,
+    verified: false,
     logo: "/images/veterinary/logo.svg",
     bannerImage: "/images/veterinary/logo.svg",
     description: "Professional Veterinary Doctor (S.A.U Tandojam, R.V.M.P Islamabad). Only Pet Animals Vaccination Specialist... Vaccines available on low prices from market rates just like Anti-Rabbies, Hair Fall, internal Worms, ticks, Mites, Seasonal Diseases. Provide Processed Hygiene Food For pet animals (Cats, Dogs).",

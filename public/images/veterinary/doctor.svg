@@ -1,14 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
   <defs>
-    <linearGradient id="dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#011429"/>
-      <stop offset="100%" stop-color="#042d5c"/>
+    <linearGradient id="dBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b132b"/>
+      <stop offset="50%" stop-color="#1c2541"/>
+      <stop offset="100%" stop-color="#0b132b"/>
+    </linearGradient>
+    <linearGradient id="stethGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
     </linearGradient>
   </defs>
-  <rect width="600" height="400" fill="url(#dGrad)"/>
-  <rect x="20" y="20" width="560" height="360" rx="20" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.3"/>
-  <text x="300" y="160" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-weight="900" font-size="48">🩺</text>
-  <text x="300" y="240" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="800" font-size="24">Veterinary Doctor Consultation</text>
-  <text x="300" y="280" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-weight="600" font-size="15">S.A.U Tandojam • R.V.M.P Islamabad</text>
-  <text x="300" y="315" text-anchor="middle" fill="#34d399" font-family="system-ui, sans-serif" font-weight="600" font-size="14">Appointments Available via WhatsApp</text>
+  <rect width="600" height="400" rx="16" fill="url(#dBg)"/>
+  <rect x="20" y="20" width="560" height="360" rx="12" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.25"/>
+
+  <!-- Background Glow -->
+  <circle cx="300" cy="145" r="105" fill="#fbbf24" opacity="0.06"/>
+  <circle cx="300" cy="145" r="75" fill="none" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6,6" opacity="0.4"/>
+
+  <!-- Stethoscope & Doctor Badge Illustration -->
+  <g transform="translate(300, 145)">
+    <!-- Stethoscope Loop -->
+    <path d="M-35,-45 C-35,25 35,25 35,-45" fill="none" stroke="#e2e8f0" stroke-width="7" stroke-linecap="round"/>
+    <!-- Earpieces -->
+    <path d="M-35,-45 L-25,-60 M35,-45 L25,-60" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="-25" cy="-60" r="4" fill="#fbbf24"/>
+    <circle cx="25" cy="-60" r="4" fill="#fbbf24"/>
+    <!-- Tube & Chestpiece -->
+    <path d="M0,0 L0,35 C0,50 20,50 20,35 L20,20" fill="none" stroke="#34d399" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="20" cy="15" r="14" fill="#34d399" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="20" cy="15" r="6" fill="#0b132b"/>
+
+    <!-- Doctor Caduceus / Cross Badge -->
+    <g transform="translate(0, -10)">
+      <circle cx="0" cy="0" r="24" fill="#058A39" stroke="#ffffff" stroke-width="2"/>
+      <path d="M-8,-3 H8 V3 H-8 Z M-3,-8 H3 V8 H-3 Z" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- Typography -->
+  <text x="300" y="285" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">Veterinary Doctor Consultation</text>
+  <text x="300" y="318" text-anchor="middle" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="14">S.A.U Tandojam • R.V.M.P Islamabad</text>
+  <text x="300" y="344" text-anchor="middle" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="13">Book Appointment Easily via WhatsApp</text>
 </svg>

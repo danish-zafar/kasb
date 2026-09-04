@@ -75,14 +75,14 @@ export const ALL_LISTINGS = [
 ];
 
 const CATEGORIES = [
-  "Veterinary",
-  "Hotel/Hospitality",
-  "Healthcare",
   "Businesses",
-  "Property & Real Estate",
-  "Professional Services",
+  "Deals & Offers",
   "Education & Tutors",
-  "Deals & Offers"
+  "Healthcare",
+  "Hotel/Hospitality",
+  "Professional Services",
+  "Property & Real Estate",
+  "Veterinary"
 ];
 
 export default function ListingsPage() {

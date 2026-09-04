@@ -192,7 +192,9 @@ export default function BusinessDetailPage({ params }: PageProps) {
               </div>
               <div className="bg-slate-950/50 p-3 rounded-xl border border-slate-800/60">
                 <span className="text-slate-500 block text-[10px] uppercase">Status</span>
-                <span className="font-semibold text-emerald-400">Verified & Active</span>
+                <span className={`font-semibold ${listing.verified ? 'text-emerald-400' : 'text-sky-400'}`}>
+                  {listing.verified ? 'Verified & Active' : 'Active'}
+                </span>
               </div>
             </div>
           </div>
