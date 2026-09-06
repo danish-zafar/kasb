@@ -53,7 +53,7 @@ export const LISTINGS: ListingItem[] = [
     title: "Jaweria Designer | Graphic Designer",
     category: "Graphic Designer",
     address: "Awami colony Sadiq Abad",
-    price: "15000 pkr",
+    price: "15000 PKR",
     description: "I’m Jaweria, a Graphic Designer specializing in creative and professional visual designs. Logo Design, Social Media Posts, Business Cards, Posters, Flyers, Banners, Branding Designs.",
     whatsapp: "923062635726",
     logo: "/images/graphic-design/logo.png",

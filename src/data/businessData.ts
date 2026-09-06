@@ -470,7 +470,7 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
     city: "Sadiqabad",
     district: "Rahim Yar Khan",
     address: "Awami colony Sadiq Abad",
-    priceRange: "15000 pkr",
+    priceRange: "15000 PKR",
     serviceType: "Graphic Design & Branding",
     whatsapp: "923062635726",
     phone: "0306 2635726",
@@ -487,9 +487,9 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
         name: "Logo Design",
         category: "Branding",
         description: "Clean, modern, and memorable custom logo design tailored for your business and brand identity.",
-        image: "/images/graphic-design/logo.png",
+        image: "/images/graphic-design/logo-design.svg",
         badge: "Popular",
-        price: "15000 pkr",
+        price: "15000 PKR",
         details: {
           overview: "Custom vector logo design with high-resolution source files & brand assets.",
           duration: "Project Based",
@@ -503,7 +503,7 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
         description: "Engaging social media post designs, ad creatives, and banners for Instagram, Facebook, and LinkedIn.",
         image: "/images/graphic-design/social-media.svg",
         badge: "Creative",
-        price: "15000 pkr",
+        price: "15000 PKR",
         details: {
           overview: "High-converting social media visual posts & banners.",
           duration: "Project Based",
@@ -517,7 +517,7 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
         description: "Professional and elegant business card designs ready for high-quality printing.",
         image: "/images/graphic-design/business-cards.svg",
         badge: "Print Ready",
-        price: "15000 pkr",
+        price: "15000 PKR",
         details: {
           overview: "Double-sided premium business card design with print files.",
           duration: "Project Based",
@@ -531,7 +531,7 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
         description: "Eye-catching promotional posters, event flyers, web banners, and billboard designs.",
         image: "/images/graphic-design/posters-banners.svg",
         badge: "Promotional",
-        price: "15000 pkr",
+        price: "15000 PKR",
         details: {
           overview: "Custom posters, flyers, and digital/print banners.",
           duration: "Project Based",
@@ -545,7 +545,7 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
         description: "Complete corporate branding packages including color palettes, typography, and brand identity guidelines.",
         image: "/images/graphic-design/branding-designs.svg",
         badge: "Full Package",
-        price: "15000 pkr",
+        price: "15000 PKR",
         details: {
           overview: "Complete visual identity and brand style guide creation.",
           duration: "Project Based",

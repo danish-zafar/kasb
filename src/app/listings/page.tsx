@@ -79,9 +79,9 @@ export const ALL_LISTINGS = [
     subCategory: "Graphic Designing & Brand Identity",
     city: "Sadiqabad / All Pakistan",
     address: "Awami colony Sadiq Abad",
-    price: "15000 pkr",
+    price: "15000 PKR",
     whatsapp: "923062635726",
-    logo: "/images/graphic-design/logo.svg",
+    logo: "/images/graphic-design/logo.png",
     description: "I’m Jaweria, a Graphic Designer specializing in creative and professional visual designs. I provide Logo Design, Social Media Posts, Business Cards, Posters, Flyers, Banners, and Branding Designs.",
     featured: true
   }
