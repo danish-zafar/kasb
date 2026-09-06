@@ -56,7 +56,7 @@ export const LISTINGS: ListingItem[] = [
     price: "15000 pkr",
     description: "I’m Jaweria, a Graphic Designer specializing in creative and professional visual designs. Logo Design, Social Media Posts, Business Cards, Posters, Flyers, Banners, Branding Designs.",
     whatsapp: "923062635726",
-    logo: "/images/graphic-design/logo.svg",
+    logo: "/images/graphic-design/logo.png",
     featured: true,
     city: "Sadiqabad / Online Worldwide"
   }

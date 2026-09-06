@@ -477,8 +477,8 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
     hours: "Available for Freelance & Online Clients Worldwide",
     reviews: "5.0 ★ (Creative Visual Designer)",
     verified: false,
-    logo: "/images/graphic-design/logo.svg",
-    bannerImage: "/images/graphic-design/logo.svg",
+    logo: "/images/graphic-design/logo.png",
+    bannerImage: "/images/graphic-design/logo.png",
     description: "I’m Jaweria, a Graphic Designer specializing in creative and professional visual designs. I provide Logo Design, Social Media Posts, Business Cards, Posters, Flyers, Banners, and Branding Designs. I focus on clean, modern, and engaging designs tailored to each client’s needs. Available for freelance projects and online clients worldwide.",
     featured: true,
     products: [
@@ -487,7 +487,7 @@ export const BUSINESS_DATA: Record<string, BusinessListing> = {
         name: "Logo Design",
         category: "Branding",
         description: "Clean, modern, and memorable custom logo design tailored for your business and brand identity.",
-        image: "/images/graphic-design/logo-design.svg",
+        image: "/images/graphic-design/logo.png",
         badge: "Popular",
         price: "15000 pkr",
         details: {
