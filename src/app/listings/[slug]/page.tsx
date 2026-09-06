@@ -75,6 +75,7 @@ export default function BusinessDetailPage({ params }: PageProps) {
   const isGuestHouse = listing.id === "ideal-guest-house" || listing.category.toLowerCase().includes("hotel");
   const isAcademy = listing.id === "quran-academy" || listing.category.toLowerCase().includes("quran");
   const isVet = listing.id === "dr-azad-sindhi-vet-care" || listing.category.toLowerCase().includes("veterinary");
+  const isGraphicDesigner = listing.id === "jaweria-designer" || listing.category.toLowerCase().includes("graphic");
 
   const mainWhatsappUrl = `https://wa.me/${listing.whatsapp}?text=${encodeURIComponent(
     isAcademy
@@ -85,7 +86,9 @@ export default function BusinessDetailPage({ params }: PageProps) {
           ? `AoA! Mujhe ${listing.title} ke hawale se room booking / rates maloom karne hain.`
           : isVet
             ? `AoA! Mujhe ${listing.title} ke hawale se pet treatment / appointment book karni hai.`
-            : `AoA! Mujhe ${listing.title} ke hawale se inquiry / appointment book karni hai.`
+            : isGraphicDesigner
+              ? `AoA! Mujhe ${listing.title} ke design services aur projects ke hawale se inquiry karni hai.`
+              : `AoA! Mujhe ${listing.title} ke hawale se inquiry / appointment book karni hai.`
   )}`;
 
   return (
@@ -342,7 +345,7 @@ export default function BusinessDetailPage({ params }: PageProps) {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
               <div>
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  {isAcademy ? "Available Courses & Classes" : isOrderProduct ? "Featured Collection" : "Featured Services"}
+                  {isAcademy ? "Available Courses & Classes" : isOrderProduct ? "Featured Collection" : isGraphicDesigner ? "Design Services Offered" : "Featured Services"}
                   <span className="text-xs bg-amber-500/10 text-amber-400 px-2.5 py-0.5 rounded-full border border-amber-500/20 font-medium">
                     {products.length} Items
                   </span>
@@ -350,7 +353,9 @@ export default function BusinessDetailPage({ params }: PageProps) {
                 <p className="text-xs text-slate-400 mt-0.5">
                   {isAcademy
                     ? "Select any Quranic or Islamic course below to enroll or book a free trial class."
-                    : "Select any option below to view details or make an inquiry via WhatsApp."}
+                    : isGraphicDesigner
+                      ? "Browse graphic design services offered below and inquire directly on WhatsApp."
+                      : "Select any option below to view details or make an inquiry via WhatsApp."}
                 </p>
               </div>
 
@@ -378,7 +383,9 @@ export default function BusinessDetailPage({ params }: PageProps) {
                 const itemWhatsappUrl = `https://wa.me/${listing.whatsapp}?text=${encodeURIComponent(
                   isAcademy 
                     ? `AoA! Mujhe "${product.name}" course ke online admission aur free trial class ke bare me janna hai.`
-                    : `AoA! Mujhe "${product.name}" ke hawale se inquiry karni hai.`
+                    : isGraphicDesigner
+                      ? `AoA! Mujhe "${product.name}" design service ke hawale se inquiry / order karna hai.`
+                      : `AoA! Mujhe "${product.name}" ke hawale se inquiry karni hai.`
                 )}`;
 
                 return (

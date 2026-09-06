@@ -71,6 +71,19 @@ export const ALL_LISTINGS = [
     logo: "/images/veterinary/logo.svg",
     description: "Professional Veterinary Doctor (S.A.U Tandojam, R.V.M.P Islamabad). Pet animals vaccination specialist (Anti-Rabies, Worms, Ticks, Mites) & hygiene pet food.",
     featured: true
+  },
+  {
+    id: "jaweria-designer",
+    title: "Jaweria Designer | Graphic Designer",
+    category: "Graphic Designer",
+    subCategory: "Graphic Designing & Brand Identity",
+    city: "Sadiqabad / All Pakistan",
+    address: "Awami colony Sadiq Abad",
+    price: "15000 pkr",
+    whatsapp: "923062635726",
+    logo: "/images/graphic-design/logo.svg",
+    description: "I’m Jaweria, a Graphic Designer specializing in creative and professional visual designs. I provide Logo Design, Social Media Posts, Business Cards, Posters, Flyers, Banners, and Branding Designs.",
+    featured: true
   }
 ];
 
@@ -78,6 +91,7 @@ const CATEGORIES = [
   "Businesses",
   "Deals & Offers",
   "Education & Tutors",
+  "Graphic Designer",
   "Healthcare",
   "Hotel/Hospitality",
   "Professional Services",

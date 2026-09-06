@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="20" fill="url(#bgGrad)"/>
+  <rect x="200" y="50" width="200" height="200" rx="24" fill="#ffffff" opacity="0.1" stroke="#38bdf8" stroke-width="3"/>
+  <circle cx="300" cy="150" r="45" fill="none" stroke="#ec4899" stroke-width="8"/>
+  <circle cx="350" cy="95" r="8" fill="#fbbf24"/>
+  <text x="300" y="300" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="900" font-size="28">Social Media Posts &amp; Content</text>
+  <text x="300" y="335" text-anchor="middle" fill="#38bdf8" font-family="system-ui, sans-serif" font-weight="600" font-size="16">Engaging Instagram, Facebook &amp; Ad Creatives</text>
+</svg>

@@ -47,5 +47,17 @@ export const LISTINGS: ListingItem[] = [
     logo: "/images/veterinary/logo.svg",
     featured: true,
     city: "Daharki"
+  },
+  {
+    id: "jaweria-designer",
+    title: "Jaweria Designer | Graphic Designer",
+    category: "Graphic Designer",
+    address: "Awami colony Sadiq Abad",
+    price: "15000 pkr",
+    description: "I’m Jaweria, a Graphic Designer specializing in creative and professional visual designs. Logo Design, Social Media Posts, Business Cards, Posters, Flyers, Banners, Branding Designs.",
+    whatsapp: "923062635726",
+    logo: "/images/graphic-design/logo.svg",
+    featured: true,
+    city: "Sadiqabad / Online Worldwide"
   }
 ];

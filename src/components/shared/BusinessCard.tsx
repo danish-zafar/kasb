@@ -11,6 +11,7 @@ export interface BusinessCardProps {
   description: string;
   whatsapp: string;
   logo?: string;
+  verified?: boolean;
 }
 
 export default function BusinessCard({
@@ -21,7 +22,8 @@ export default function BusinessCard({
   price,
   description,
   whatsapp,
-  logo
+  logo,
+  verified = true
 }: BusinessCardProps) {
 
   // Primary image source fallback mechanism
@@ -54,7 +56,7 @@ export default function BusinessCard({
           <div>
             <div className="flex items-center gap-1.5">
               <h3 className="font-bold text-lg text-gray-900 line-clamp-1">{title}</h3>
-              <CheckCircle2 className="w-5 h-5 text-amber-500 flex-shrink-0" />
+              {verified && <CheckCircle2 className="w-5 h-5 text-amber-500 flex-shrink-0" />}
             </div>
             <p className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full inline-block mt-1">
               {category}

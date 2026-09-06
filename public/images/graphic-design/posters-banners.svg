@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95"/>
+      <stop offset="50%" stop-color="#831843"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="20" fill="url(#bgGrad)"/>
+  <rect x="220" y="40" width="160" height="220" rx="12" fill="#ffffff" opacity="0.15" stroke="#f472b6" stroke-width="3"/>
+  <text x="300" y="140" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-weight="900" font-size="24">POSTERS &amp; FLYERS</text>
+  <text x="300" y="170" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="600" font-size="14">PROMOTIONAL DESIGNS</text>
+  <text x="300" y="320" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="900" font-size="28">Posters, Flyers &amp; Banners</text>
+  <text x="300" y="355" text-anchor="middle" fill="#f472b6" font-family="system-ui, sans-serif" font-weight="600" font-size="16">High Resolution Print &amp; Digital Banners</text>
+</svg>

@@ -33,7 +33,8 @@ export const ALL_LISTINGS = Object.values(BUSINESS_DATA).map((b) => ({
   description: b.description,
   whatsapp: b.whatsapp,
   logo: b.logo,
-  featured: b.featured
+  featured: b.featured,
+  verified: b.verified
 }));
 
 export default function Home() {
@@ -139,8 +140,9 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
           {[
+            { title: "Graphic Designer", count: "Visual & Branding Services", icon: Tag },
             { title: "Veterinary", count: "Doctor & Pet Care Services", icon: Stethoscope },
             { title: "Education", count: "Online Quran Academy & Tutors", icon: GraduationCap },
             { title: "Hotel/Hospitality", count: "Ideal Guest House & Stays", icon: Hotel },
@@ -186,6 +188,7 @@ export default function Home() {
               description={item.description}
               whatsapp={item.whatsapp}
               logo={item.logo}
+              verified={item.verified}
             />
           ))}
         </div>
