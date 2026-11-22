@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-[#033974]: #033974;
+  --color-[#058A39]: #058A39;
+  --color-[#F28C00]: #F28C00;
+  --color-[#021d3b]: #021d3b;
+}
+
+:root {
+  --primary: #033974;
+  --secondary: #058A39;
+  --accent: #F28C00;
+  --dark-navy: #021d3b;
+}
+
+body {
+  color: #0f172a;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Primary Button Theme Overrides */
+.btn-primary {
+  background-color: #058A39 !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover {
+  background-color: #04702e !important;
+}
+
+.text-brand-blue {
+  color: #033974 !important;
+}
+
+.bg-brand-blue {
+  background-color: #033974 !important;
+}
+
+.bg-brand-navy {
+  background-color: #021d3b !important;
+}
+
+.bg-brand-green {
+  background-color: #058A39 !important;
+}
+
+/* Logo Full-Size Responsive Fix */
+.logo-full-size {
+  width: auto !important;
+  height: 48px !important;
+  max-height: 52px !important;
+  object-fit: contain !important;
+}
+
+@media (min-width: 640px) {
+  .logo-full-size {
+    height: 56px !important;
+    max-height: 60px !important;
+  }
+}

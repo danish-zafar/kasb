@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#011429"/>
+      <stop offset="50%" stop-color="#022c54"/>
+      <stop offset="100%" stop-color="#058A39"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="40" fill="url(#bgGrad)"/>
+  <circle cx="200" cy="200" r="170" fill="none" stroke="#058A39" stroke-width="4" stroke-dasharray="10 6" opacity="0.6"/>
+
+  <!-- Medical Cross & Paw -->
+  <g transform="translate(200, 150)">
+    <!-- Medical Cross -->
+    <path d="M-25,-75 H25 V-25 H75 V25 H25 V75 H-25 V25 H-75 V-25 H-25 Z" fill="#ffffff" opacity="0.95"/>
+    <path d="M-20,-70 H20 V-20 H70 V20 H20 V70 H-20 V20 H-70 V-20 H-20 Z" fill="#058A39"/>
+
+    <!-- Paw inside cross -->
+    <circle cx="0" cy="12" r="10" fill="url(#goldGrad)"/>
+    <circle cx="-12" cy="-5" r="4" fill="url(#goldGrad)"/>
+    <circle cx="-5" cy="-12" r="4" fill="url(#goldGrad)"/>
+    <circle cx="5" cy="-12" r="4" fill="url(#goldGrad)"/>
+    <circle cx="12" cy="-5" r="4" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- Text -->
+  <text x="200" y="275" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="900" font-size="22" letter-spacing="1">DR AZAD SINDHI</text>
+  <text x="200" y="305" text-anchor="middle" fill="#34d399" font-family="system-ui, sans-serif" font-weight="700" font-size="16" letter-spacing="2">VET CARE SERVICES</text>
+  <text x="200" y="335" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-weight="600" font-size="14">DAHARKI • 0313 3100011</text>
+  <text x="200" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-weight="500" font-size="11">R.V.M.P (Islamabad) • S.A.U Tandojam</text>
+</svg>
